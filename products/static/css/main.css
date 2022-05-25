@@ -66,6 +66,10 @@ table {
     border-spacing: 0px;
 }
 
+#table-wrap {
+    overflow-x: scroll;
+}
+
 .valuecolumn {
     width: 150px;
 }
@@ -97,4 +101,8 @@ tr {
 a {
     color: var(--link);
     text-decoration: none;
+}
+
+.content {
+    padding: 0 15px 0 15px;
 }
