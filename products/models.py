@@ -18,7 +18,7 @@ class Product(models.Model):
     def calculate(self):
         self.litre_price = self.price / self.volume
         if self.alcohol:
-            self.alcohol_litre_price = self.litre_price / self.alcohol
+            self.alcohol_litre_price = self.litre_price / self.alcohol * 100
         else:
             self.alcohol_litre_price = 0
 
