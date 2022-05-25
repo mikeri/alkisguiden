@@ -1,0 +1,100 @@
+:root {
+    --background: #eee;
+    --th-background: #aaa;
+    --header-background: #ddd;
+    --text: #333;
+    --th-text: #111;
+    --link: #13507C;
+    --faint: #777;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #222;
+        --th-background: #555;
+        --header-background: #333;
+        --text: #aaa;
+        --th-text: #ddd;
+        --link: #94BCD9;
+        --faint: #777;
+    }
+}
+
+html {
+    background: var(--background);
+    color: var(--text);
+    font-family: sans-serif;
+}
+
+#header {
+    background: var(--header-background);
+    width: 100%;
+    padding: 15px 0 15px 0;
+}
+
+#footer {
+    text-align: center;
+    background: var(--header-background);
+    width: 100%;
+    margin-top: 35px;
+    /* padding: 5px 0 5px 0; */
+}
+
+#main-table {
+    width: 100%
+}
+
+.title {
+    font-size: 2.5em;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    font-style: italic;
+    color: var(--faint);
+    text-transform: lowercase;
+}
+
+thead {
+    background: var(--th-background);
+    color: var(--th-text);
+    padding: 0px;
+    border-spacing: 0px;
+    margin: 0px;
+}
+
+table {
+    border-spacing: 0px;
+}
+
+.valuecolumn {
+    width: 150px;
+}
+
+.valuecell {
+    text-align: right;
+}
+
+.type-selector-wrap {
+    white-space: nowrap;
+}
+
+th, td {
+    padding: 2px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: var(--th-background);
+}
+
+tr {
+    border-width: 0 1px 0 0;
+    border-style: solid;
+}
+
+.subtext {
+    font-size: 0.7em;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+}

@@ -1,0 +1,14 @@
+    {% for product in product_list %}
+    <tr>
+        <td>
+            <a href="https://www.vinmonopolet.no{{ product.url }}">{{ product.name }}</a>
+            <br>
+            <span class="subtext">{{ product.type.name }}</span>
+        </td>
+        <td class="valuecell">{{ product.alcohol }}%</td>
+        <td class="valuecell">kr {{ product.litre_price|floatformat:2 }}</td>
+        <td class="valuecell">kr {{ product.alcohol_litre_price|floatformat:2 }}</td>
+        <td class="valuecell">kr {{ product.price|floatformat:2 }}</td>
+        <td class="valuecell">{{ product.volume }} l</td>
+    </tr>
+    {% endfor product in product_list %}
