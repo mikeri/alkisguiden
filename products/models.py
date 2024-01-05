@@ -16,7 +16,7 @@ class Product(models.Model):
     type = models.ForeignKey("ProductType", on_delete=models.PROTECT)
 
     def calculate(self):
-        self.litre_price = self.price / self.volume
+        self.litre_price = self.price / self.volume * 100
         if self.alcohol:
             self.alcohol_litre_price = self.litre_price / self.alcohol * 100
         else:

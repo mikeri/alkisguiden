@@ -9,6 +9,6 @@
         <td class="valuecell">kr {{ product.litre_price|floatformat:2 }}</td>
         <td class="valuecell">kr {{ product.alcohol_litre_price|floatformat:2 }}</td>
         <td class="valuecell">kr {{ product.price|floatformat:2 }}</td>
-        <td class="valuecell">{{ product.volume }} l</td>
+        <td class="valuecell">{{ product.volume }} cl</td>
     </tr>
     {% endfor product in product_list %}
