@@ -24,6 +24,8 @@ class Command(BaseCommand):
                     category = category["name"]
                 if not category:
                     category = import_product["main_category"]["name"]
+                if category.startswith("Alkoholfri"):
+                    continue
                 product, created = models.Product.objects.get_or_create(
                     code=str(import_product["code"]),
                     defaults={
