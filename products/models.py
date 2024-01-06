@@ -12,7 +12,7 @@ class Product(models.Model):
     price = models.FloatField()
     litre_price = models.FloatField()
     alcohol_litre_price = models.FloatField()
-    volume = models.FloatField()
+    volume = models.IntegerField()
     type = models.ForeignKey("ProductType", on_delete=models.PROTECT)
 
     def calculate(self):
