@@ -106,3 +106,10 @@ a {
 .content {
     padding: 0 15px 0 15px;
 }
+
+.sortbutton {
+    background: none;
+    border: none;
+    color: var(--th-text);
+    font-weight: bold;
+}

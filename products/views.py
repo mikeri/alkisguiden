@@ -23,7 +23,15 @@ class TableView(ListView):
     paginate_by = 100
 
     def handle_attr(self, attr, default):
-        query_val = self.request.GET.get(attr)
+        if attr == "types":
+            selected_types = filter(lambda p: p.startswith("type-"), self.request.GET.keys())
+            query_val = []
+            for _type in selected_types:
+                query_val.append(int(_type[5:]))
+            if not query_val:
+                return None
+        else:
+            query_val = self.request.GET.get(attr)
         session_val = self.request.session.get(attr)
         if attr == "sort" and query_val == session_val is not None:
             query_val = "-" + query_val
@@ -36,10 +44,8 @@ class TableView(ListView):
 
     def get_queryset(self):
         ordering = self.handle_attr("sort", "alcohol_litre_price")
-        types_query = self.handle_attr("types", None)
+        types = self.handle_attr("types", None)
         queryset = models.Product.objects.all()
-        if types_query and types_query != "all":
-            types = types_query.split(",")
-            types.remove("")
+        if types:
             queryset = queryset.filter(type_id__in=types)
         return queryset.order_by(ordering)

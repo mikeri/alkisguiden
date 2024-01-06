@@ -15,7 +15,7 @@
             <div class="content">
                 {% for type in product_types %}
                 <div class="pure-u-1-2 pure-u-md-1-4 type-selector-wrap">
-                    <input type="checkbox" class="checkbox type-selector" value="" name="{{ type.pk }}">
+                    <input hx-get="table" hx-include="input" hx-target="#table-content" type="checkbox" class="checkbox type-selector" value="" name="type-{{ type.pk }}">
                     {{ type.name }}
                 </div>
                 {% endfor %}
@@ -28,11 +28,21 @@
                     <thead>
                         <tr>
                             <th>Produkt</th>
-                            <th data-sort="alcohol" class="valuecolumn">Alkoholprosent</th>
-                            <th data-sort="litre_price" class="valuecolumn">Literpris</th>
-                            <th data-sort="alcohol_litre_price" class="valuecolumn">Alkoholliterpris</th>
-                            <th data-sort="price" class="valuecolumn">Enhetspris</th>
-                            <th data-sort="volume" class="valuecolumn">Volum</th>
+                            <th class="valuecolumn">
+                                <button hx-get="table" hx-target="#table-content" hx-include="input" name="sort" class="sortbutton" value="alcohol">Alkoholprosent</button>
+                            </th>
+                            <th class="valuecolumn">
+                                <button hx-get="table" hx-target="#table-content" hx-include="input" name="sort" class="sortbutton" value="litre_price">Literpris</button>
+                            </th>
+                            <th class="valuecolumn">
+                                <button hx-get="table" hx-target="#table-content" hx-include="input" name="sort" class="sortbutton" value="alcohol_litre_price">Alkoholliterpris</button>
+                            </th>
+                            <th class="valuecolumn">
+                                <button hx-get="table" hx-target="#table-content" hx-include="input" name="sort" class="sortbutton" value="price">Enhetspris</button>
+                            </th>
+                            <th class="valuecolumn">
+                                <button hx-get="table" hx-target="#table-content" name="sort" class="sortbutton" value="volume">Volum</button>
+                            </th>
                         </tr>
                     </thead>
                     <tbody id="table-content">
