@@ -18,7 +18,7 @@ if ENV == "dev":
 else:
     SECRET_KEY = os.environ["SECRET_KEY"]
     DEBUG = False
-    ALLOWED_HOSTS = ["alkisguiden.tk"]
+    ALLOWED_HOSTS = ["alkisguiden.no"]
 
 INSTALLED_APPS = [
     "django.contrib.staticfiles",
