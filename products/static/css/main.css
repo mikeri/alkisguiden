@@ -6,6 +6,8 @@
     --th-text: #111;
     --link: #13507C;
     --faint: #777;
+    --faint-bg: #ddd;
+    --color-accent: #2b99bb;
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -16,6 +18,8 @@
         --th-text: #ddd;
         --link: #94BCD9;
         --faint: #777;
+        --faint-bg: #333;
+        --color-accent: #1dd9be;
     }
 }
 

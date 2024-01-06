@@ -15,8 +15,11 @@
             <div class="content">
                 {% for type in product_types %}
                 <div class="pure-u-1-2 pure-u-md-1-4 type-selector-wrap">
-                    <input hx-get="table" hx-include="input" hx-target="#table-content" type="checkbox" class="checkbox type-selector" value="" name="type-{{ type.pk }}">
-                    {{ type.name }}
+                    <label class="lns-checkbox">
+
+                        <input hx-get="table" hx-include="input" hx-target="#table-content" type="checkbox" class="checkbox type-selector" value="" name="type-{{ type.pk }}">
+                        <span>{{ type.name }}</span>
+                    </label>
                 </div>
                 {% endfor %}
             </div>
