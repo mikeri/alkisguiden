@@ -103,4 +103,7 @@ STATIC_URL = "static/"
 if ENV == "prod":
     STATIC_ROOT = "/var/www/alkisguiden/static/"
 
+if not DEBUG:
+    STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
