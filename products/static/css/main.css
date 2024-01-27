@@ -8,6 +8,7 @@
     --faint: #777;
     --faint-bg: #ddd;
     --color-accent: #2b99bb;
+    --logo-border: #888;
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -20,6 +21,7 @@
         --faint: #777;
         --faint-bg: #333;
         --color-accent: #1dd9be;
+        --logo-border: #aaa;
     }
 }
 
@@ -32,7 +34,6 @@ html {
 #header {
     background: var(--header-background);
     width: 100%;
-    padding: 15px 0 15px 0;
 }
 
 #footer {
@@ -109,6 +110,32 @@ a {
 
 .content {
     padding: 0 15px 0 15px;
+}
+
+#header-content {
+    padding: 15px;
+}
+
+#logo {
+    height: 120px;
+    width: 120px;
+    border: 2px solid var(--logo-border);
+    border-radius: 5px;
+    margin: 15px;
+    @media (width <= 48em) {
+        display: none;
+    }
+}
+
+#header-inner-wrap {
+    display: flex;
+    align-content: center;
+}
+
+#header-content-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .sortbutton {

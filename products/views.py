@@ -1,6 +1,8 @@
+from django.contrib.staticfiles import finders
 from django.views.generic import ListView
 from products import models
 from random import choice
+import os
 
 
 class OverviewView(ListView):
@@ -11,7 +13,10 @@ class OverviewView(ListView):
     def get_context_data(self, *args, **kwargs):
         self.request.session["sort"] = "alcohol_litre_price"
         self.request.session["types"] = "all"
+        logo_dir = finders.find("img/logo")
+        logos = [img for img in os.listdir(logo_dir) if img.endswith(".webp")]
         context = super().get_context_data(*args, **kwargs)
+        context["logo"] = choice(logos)
         context["subtitle"] = choice(models.Slogan.objects.all())
         context["product_types"] = models.ProductType.objects.all().order_by("name")
         return context
