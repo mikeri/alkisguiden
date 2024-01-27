@@ -1,0 +1,32 @@
+---
+- hosts: server
+
+  tasks:
+    - name: synchronize django project
+      synchronize:
+          src: "{{playbook_dir}}/.."
+          dest: /var/www/alkisguiden
+          archive: no
+          recursive: yes
+          perms: no
+          rsync_opts:
+            - "--exclude=db.sqlite3" 
+            - "--exclude=.git" 
+            - "--exclude=environment.py" 
+            - "--exclude=*.pyc"
+            - "--exclude=__pycache__"
+            - "--exclude=node_modules"
+            - "--exclude=package*"
+            - "--links"
+
+    - name: run migrations
+      django_manage:
+          command: migrate
+          virtualenv: /var/www/virtualenv
+          app_path: /var/www/alkisguiden
+
+    - name: collect static files
+      django_manage:
+          command: collectstatic --noinput
+          virtualenv: /var/www/virtualenv
+          app_path: /var/www/alkisguiden
