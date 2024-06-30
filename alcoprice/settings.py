@@ -19,6 +19,7 @@ else:
     SECRET_KEY = os.environ["SECRET_KEY"]
     DEBUG = False
     ALLOWED_HOSTS = ["alkisguiden.no"]
+    CSRF_TRUSTED_ORIGINS = ["https://alkisguiden.no"]
 
 INSTALLED_APPS = [
     "django.contrib.staticfiles",
