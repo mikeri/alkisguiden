@@ -16,12 +16,14 @@
             <div class="pure-u-1 pure-u-md-1-6"></div>
             <div class="pure-u-1 pure-u-md-2-3">
                 <div id="header-inner-wrap">
-                    <img src="{% static "img/logo/" %}{{ logo }}" id="logo">
                     <div id="header-content-wrap">
                         <div id="header-content">
-                            <span class="title">alkisguiden.no</span>
-                            <br>
-                            <span class="subtitle"> - {{ subtitle }}</span>
+                            <div class="logo-wrap">
+                                <img src="{% static "img/logo/" %}{{ logo }}" id="logo">
+                                <div class="slogan-wrap">
+                                    <span class="subtitle"> - {{ subtitle }}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

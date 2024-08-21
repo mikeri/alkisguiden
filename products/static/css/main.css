@@ -8,7 +8,7 @@
     --faint: #777;
     --faint-bg: #ddd;
     --color-accent: #2b99bb;
-    --logo-border: #888;
+    --logo-border: #8887;
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -21,7 +21,7 @@
         --faint: #777;
         --faint-bg: #333;
         --color-accent: #1dd9be;
-        --logo-border: #aaa;
+        --logo-border: #aaa7;
     }
 }
 
@@ -113,28 +113,33 @@ a {
 }
 
 #header-content {
-    padding: 15px;
+    position: relative;
+    text-align: center;
+    width: 90%;
+}
+
+.slogan-wrap {
+    position: relative;
+    padding: 15px 15px;
+    text-align: right;
 }
 
 #logo {
-    height: 120px;
-    width: 120px;
+    /* width: 120px; */
     border: 2px solid var(--logo-border);
     border-radius: 5px;
-    margin: 15px;
-    @media (width <= 48em) {
-        display: none;
-    }
+    width: 100%;
 }
 
 #header-inner-wrap {
     display: flex;
     align-content: center;
+    margin: 15px 0;
 }
 
 #header-content-wrap {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
 
