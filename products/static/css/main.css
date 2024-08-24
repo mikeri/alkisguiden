@@ -1,27 +1,29 @@
 :root {
-    --background: #eee;
-    --th-background: #aaa;
-    --header-background: #ddd;
+    --background: #d7cfb8;
+    --th-background: #bfb595;
+    --header-background: #ece5d1;
     --text: #333;
     --th-text: #111;
     --link: #13507C;
-    --faint: #777;
-    --faint-bg: #ddd;
-    --color-accent: #2b99bb;
+    --faint: #978a63;
+    --faint-bg: #bfb595;
+    --color-accent: #716b0e;
     --logo-border: #8887;
+    --shadow: 0px 0px 20px 0px #0001;
 }
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #222;
-        --th-background: #555;
-        --header-background: #333;
+        --background: #182429;
+        --th-background: #2a3e46;
+        --header-background: #263940;
         --text: #aaa;
         --th-text: #ddd;
         --link: #94BCD9;
-        --faint: #777;
-        --faint-bg: #333;
+        --faint: #849593;
+        --faint-bg: #3b5159;
         --color-accent: #1dd9be;
         --logo-border: #aaa7;
+        --shadow: none;
     }
 }
 
@@ -34,6 +36,7 @@ html {
 #header {
     background: var(--header-background);
     width: 100%;
+    box-shadow: var(--shadow);
 }
 
 #footer {
@@ -41,7 +44,7 @@ html {
     background: var(--header-background);
     width: 100%;
     margin-top: 35px;
-    /* padding: 5px 0 5px 0; */
+    box-shadow: var(--shadow);
 }
 
 #main-table {
@@ -72,7 +75,7 @@ table {
 }
 
 #table-wrap {
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .valuecolumn {
