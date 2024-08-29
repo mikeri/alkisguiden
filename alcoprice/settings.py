@@ -101,8 +101,11 @@ TIME_ZONE = "UTC"
 USE_TZ = True
 
 STATIC_URL = "static/"
+MEDIA_URL = "media/"
+MEDIA_ROOT = f"{BASE_DIR}/media"
 if ENV == "prod":
     STATIC_ROOT = "/var/www/alkisguiden/static/"
+    MEDIA_ROOT = "/var/www/alkisguiden/media/"
 
 if not DEBUG:
     STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
